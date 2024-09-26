@@ -20,9 +20,35 @@ class RestaurantListSection extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 16),
             child: Column(
-              children: restaurants.map((restaurant) {
-                return _buildRestaurantItem(context, restaurant);
-              }).toList(),
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Text(
+                    'Daftar Restaurant',
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                        color: Theme.of(context).colorScheme.primary,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Text(
+                    'Temukan restaurant rekomendasi buat kamu',
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: Theme.of(context).colorScheme.secondary,
+                        ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Column(
+                  children: restaurants.map((restaurant) {
+                    return _buildRestaurantItem(context, restaurant);
+                  }).toList(),
+                ),
+              ],
             ),
           ),
         );

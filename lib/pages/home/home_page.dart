@@ -8,22 +8,23 @@ class HomePage extends StatelessWidget {
 
   const HomePage({super.key});
 
+  Widget _body(BuildContext context) {
+    return Container(
+        decoration:
+            BoxDecoration(color: Theme.of(context).colorScheme.inverseSurface),
+        child: ListView(
+          children: const [
+            SearchBarSection(),
+            SizedBox(
+              height: 16,
+            ),
+            RestaurantListSection()
+          ],
+        ));
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const AppBarHome(),
-      body: Container(
-          decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.inverseSurface),
-          child: ListView(
-            children: const [
-              SearchBarSection(),
-              SizedBox(
-                height: 16,
-              ),
-              RestaurantListSection()
-            ],
-          )),
-    );
+    return Scaffold(appBar: const AppBarHome(), body: _body(context));
   }
 }

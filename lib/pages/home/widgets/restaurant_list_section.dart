@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/data/model/restaurant.dart';
-import 'package:restaurant_app/pages/restaurant_detail_page.dart';
+import 'package:restaurant_app/pages/restaurant_detail/restaurant_detail_page.dart';
 
 class RestaurantListSection extends StatelessWidget {
   const RestaurantListSection({super.key});
